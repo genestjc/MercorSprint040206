@@ -1,0 +1,33 @@
+{
+  "name": "paywalled-videos",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "stripe": "^17.5.0",
+    "@stripe/stripe-js": "^5.4.0",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "thirdweb": "^5.85.0",
+    "@mux/mux-node": "^9.0.1",
+    "@mux/mux-player-react": "^3.2.4",
+    "@mux/mux-uploader-react": "^1.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20",
+    "@openzeppelin/contracts": "^5.1.0"
+  }
+}

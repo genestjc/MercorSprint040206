@@ -1,0 +1,179 @@
+:root {
+  --brand: #111111;
+  --brand-accent: #0a66ff;
+  --bg: #ffffff;
+  --muted: #6b6b6b;
+  --border: #e4e4e4;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--brand);
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.headline {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4em;
+}
+
+p, label, input, textarea, button, a, span, li {
+  font-family: Arial, sans-serif;
+}
+
+a { color: inherit; }
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.site-header .brand {
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.site-header nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--muted);
+}
+.site-header .right { display: flex; align-items: center; gap: 12px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.05s ease, opacity 0.15s ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-outline { background: #fff; color: var(--brand); border: 1px solid var(--border); }
+
+/* Video grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 32px 0 64px;
+}
+.video-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+}
+.video-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.video-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-thumb.locked > .poster { filter: blur(6px) brightness(0.6); }
+.poster {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #4338ca, #0ea5e9);
+}
+.lock-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: #fff;
+}
+.lock-overlay .icon { font-size: 28px; }
+.lock-overlay .label { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+.video-meta { padding: 14px 16px 18px; }
+.video-meta h3 { font-size: 17px; margin-bottom: 4px; }
+.video-meta p { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+.video-meta time { font-size: 12px; color: var(--muted); }
+
+/* Paywall modal — NYT/WSJ style overlay */
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+.modal {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 14px;
+  padding: 32px 32px 28px;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal .close {
+  position: absolute; top: 14px; right: 14px;
+  background: none; border: none; font-size: 22px; cursor: pointer; color: var(--muted);
+}
+.modal .kicker {
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--brand-accent); margin-bottom: 10px;
+}
+.modal h2 { font-size: 28px; line-height: 1.15; }
+.modal .sub { color: var(--muted); margin: 8px 0 20px; font-size: 15px; }
+.modal .price-row {
+  display: flex; align-items: baseline; gap: 6px; margin-bottom: 18px;
+}
+.modal .price-row .amount {
+  font-family: Helvetica, "Helvetica Neue", sans-serif;
+  font-size: 34px; font-weight: 800;
+}
+.modal .price-row .term { color: var(--muted); font-size: 14px; }
+.modal .benefits { list-style: none; padding: 0; margin: 0 0 22px; }
+.modal .benefits li { padding: 6px 0 6px 24px; position: relative; font-size: 14px; }
+.modal .benefits li::before { content: "✓"; position: absolute; left: 0; color: var(--brand-accent); }
+.modal .fineprint { font-size: 12px; color: var(--muted); margin-top: 14px; text-align: center; }
+.modal .demo-banner {
+  background: #fff8e1; border: 1px solid #ffe08a;
+  padding: 10px 12px; border-radius: 8px; font-size: 13px; margin-bottom: 16px;
+}
+
+/* Upload form */
+.upload-form { max-width: 640px; padding: 32px 0; display: flex; flex-direction: column; gap: 16px; }
+.upload-form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; }
+.upload-form input, .upload-form textarea {
+  padding: 11px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px;
+}
+.upload-form textarea { min-height: 90px; resize: vertical; }
+.status-pill {
+  display: inline-block; padding: 4px 10px; border-radius: 999px;
+  font-size: 12px; background: #eef2ff; color: #3730a3;
+}

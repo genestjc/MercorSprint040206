@@ -1,0 +1,23 @@
+{
+  "expert_name": "Joseph Genest",
+  "task_id": "TASK_16387",
+  "timestamp": "2026-04-02T09:09:58.371710+00:00",
+  "repo_url": "git@github.com:genestjc/MercorSprint040216.git",
+  "base_commit": null,
+  "assignments": {
+    "model_a": "claude-strudel-eap",
+    "model_b": "claude-sorbet-eap"
+  },
+  "code_names": {
+    "model_a": "Dolphin",
+    "model_b": "Shark"
+  },
+  "setup_verified": true,
+  "experiment_metadata": {
+    "setup_script_version": "2.1.0-v2",
+    "platform": "Darwin",
+    "claude_version_downloaded": "2026-04-02",
+    "setup_duration_seconds": 36.77
+  },
+  "last_submission_version": 0
+}

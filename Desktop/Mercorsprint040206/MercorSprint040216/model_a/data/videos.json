@@ -1,0 +1,23 @@
+[
+  {
+    "id": "demo-1",
+    "title": "Getting Started with Membership",
+    "description": "An overview of everything included in your subscription — exclusive interviews, tutorials, and behind-the-scenes content.",
+    "date": "2026-03-15",
+    "playbackId": "VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU"
+  },
+  {
+    "id": "demo-2",
+    "title": "Deep Dive: Building for the Web",
+    "description": "A long-form technical session covering modern frontend architecture, performance budgets, and the trade-offs that actually matter.",
+    "date": "2026-03-08",
+    "playbackId": "VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU"
+  },
+  {
+    "id": "demo-3",
+    "title": "Studio Tour & Q&A",
+    "description": "A walk through the recording setup, gear breakdown, and answers to the most-asked questions from members.",
+    "date": "2026-02-28",
+    "playbackId": "VZtzUzGRv02OhRnZCxcNg49OilvolTqdnFLEqBsTwaxU"
+  }
+]
